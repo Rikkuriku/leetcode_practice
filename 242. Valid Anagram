@@ -1,0 +1,29 @@
+class Solution:
+    def isAnagram(self, s: str, t: str) -> bool:
+      #solution1
+        # if len(s) != len(t):
+        #     return False
+        # s_list = list(t)
+        # for char in list(s):
+        #     if char not in s_list:
+        #         return False
+        #     else:
+        #         s_list.remove(char)
+        # return True
+        
+        
+      #solution2
+        # return sorted(s) == sorted(t)
+        
+      #solution3
+        if len(s) != len(t):
+            return False
+        countS, countT = {},{}
+
+        for i in range(len(s)):
+            countS[s[i]] = 1+ countS.get(s[i],0)
+            countT[t[i]] = 1 + countT.get(t[i], 0)
+        for c in countS:
+            if countS[c] != countT.get(c,0):
+                return False
+        return True
