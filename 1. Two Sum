@@ -6,9 +6,9 @@ class Solution:
         #             return [left, right]
         # return False
         
-        seen = {}
-        for i, value in enumerate(nums):
-            remaining = target - nums[i]
-            if remaining in seen:
-                return [i, seen[remaining]]
-            seen[value] = i 
+        prevMap = {} # val -> index
+        for i, n in enumerate(nums):
+            diff = target - n
+            if diff in prevMap:
+                return [prevMap[diff], i]
+            prevMap[n] = i
