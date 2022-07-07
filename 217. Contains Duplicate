@@ -1,0 +1,17 @@
+class Solution:
+    def containsDuplicate(self, nums: List[int]) -> bool:
+        # nums_dict = {}
+        # for i in range(len(nums)):
+        #     if nums[i] not in nums_dict:
+        #         nums_dict[nums[i]] = i
+        #     else:
+        #         return True
+        # return False
+        
+        result = Counter(nums)
+        for i in result:
+            if result[i] == 1:
+                continue
+            else:
+                return True
+        return False
