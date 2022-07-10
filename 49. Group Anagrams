@@ -8,6 +8,5 @@ class Solution:
         hashmap = defaultdict(list)
         for s in strs:
             hashmap[str(sorted(s))].append(s) 
-            print(hashmap)
         return hashmap.values()
             
